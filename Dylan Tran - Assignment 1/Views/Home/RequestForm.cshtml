@@ -22,17 +22,19 @@
 
         <div class="input">
             <div><label asp-for="Name">Your name:</label></div>
-            <div><input asp-for="Name" required/></div>
+            <div><input asp-for="Name" required placeholder="Dylan Tran"/></div>
         </div>
 
         <div class="input">
             <div><label asp-for="Email">Your email:</label></div>
-            <div><input asp-for="Email" required/></div>
+            <div><input asp-for="Email" required type="email" placeholder="tradylan@sheridancollege.ca"/></div>
         </div>
 
         <div class="input">
             <div><label asp-for="Phone">Your phone number:</label></div>
-            <div><input asp-for="Phone" /></div>
+            <div>
+                <input asp-for="Phone" required type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" />
+            </div>
         </div>
 
         <div class="input">
@@ -58,6 +60,13 @@
         <div class="input">
             <div><label asp-for="Duration">How many days do you need the equipment?:</label></div>
             <div><input asp-for="Duration" required min="1"/></div>
+        </div>
+
+        <div class="input">
+            <div><label asp-for="Request_Details">Additional Details</label></div>
+            <textarea asp-for="Request_Details" rows="5" cols="50">
+                Any specific requests that you need?
+            </textarea>
         </div>
         
         <button type="submit">Submit RSVP</button>

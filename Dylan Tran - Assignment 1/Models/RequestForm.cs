@@ -10,6 +10,8 @@ namespace Dylan_Tran___Assignment_1.Models
         public string? Role { get; set; }
         public string? Equipment { get; set; }
         public int? Duration { get; set; }
+        public string? Request_Details { get; set; }
+
     }
 }
 
