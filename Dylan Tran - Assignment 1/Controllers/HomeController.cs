@@ -23,6 +23,7 @@ namespace Dylan_Tran___Assignment_1.Controllers
             return View();
         }
 
+        [HttpGet]
         public ViewResult RequestForm()
         {
             return View();
