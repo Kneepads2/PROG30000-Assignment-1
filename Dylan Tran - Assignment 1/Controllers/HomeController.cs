@@ -29,6 +29,22 @@ namespace Dylan_Tran___Assignment_1.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ViewResult RequestForm(RequestForm requestForm)
+        {
+            // TODO: store response from guest
+            Repository.AddRequest(requestForm);
+            return View("FormSubmitted", requestForm);
+        }
+
+        public IActionResult Requests()
+        {
+            var allRequests = Repository.Requests;
+            return View(allRequests);
+
+
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

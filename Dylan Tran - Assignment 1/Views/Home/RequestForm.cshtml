@@ -6,19 +6,16 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width"   />
-    <title>RsvpForm</title>
+    <title>Request Form</title>
     <style>
         .input {
             margin-bottom: 15px;
         }
 
-        select {
-            length: 70px;
-        }
     </style>
 </head>
 <body>
-    <form asp-action="RsvpForm" method="post">
+    <form asp-action="RequestForm" method="post">
 
         <div class="input">
             <div><label asp-for="Name">Your name:</label></div>
@@ -69,7 +66,7 @@
             </textarea>
         </div>
         
-        <button type="submit">Submit RSVP</button>
+        <button type="submit">Submit Request</button>
     </form>
 </body>
 </html>
