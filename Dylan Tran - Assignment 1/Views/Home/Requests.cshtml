@@ -4,40 +4,53 @@
     ViewData["Title"] = "Requests";
 }
 
-<h1>IT Equipment Requests</h1>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Role</th>
-            <th>Equipment Type</th>
-            <th>Duration (Days)</th>
-            <th>Additional Details</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model != null && Model.Any())
-        {
-            @foreach (var request in Model)
+<html>
+    <head>
+        <style>
+            button {
+                border: 1px 1px black;
+            }
+        </style>
+    </head>
+    <h1>IT Equipment Requests</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Role</th>
+                <th>Equipment Type</th>
+                <th>Duration (Days)</th>
+                <th>Additional Details</th>
+                <th><button>Accept All</button></th>
+                <th><button>Deny All</button></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var request in Model)
+                {
+                    <tr>
+                        <td>@request.Name</td>
+                        <td>@request.Email</td>
+                        <td>@request.Phone</td>
+                        <td>@request.Role</td>
+                        <td>@request.Equipment</td>
+                        <td>@request.Duration</td>
+                        <td>@request.Request_Details</td>
+                        <td><button>Accept</button></td>
+                        <td><button>Deny</button></td>
+                    </tr>
+                }
+            }
+            else
             {
                 <tr>
-                    <td>@request.Name</td>
-                    <td>@request.Email</td>
-                    <td>@request.Phone</td>
-                    <td>@request.Role</td>
-                    <td>@request.Equipment</td>
-                    <td>@request.Duration</td>
-                    <td>@request.Request_Details</td>
+                    <td colspan="7">No requests found.</td>
                 </tr>
             }
-        }
-        else
-        {
-            <tr>
-                <td colspan="7">No requests found.</td>
-            </tr>
-        }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</html>

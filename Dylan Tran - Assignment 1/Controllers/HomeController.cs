@@ -29,6 +29,18 @@ namespace Dylan_Tran___Assignment_1.Controllers
             return View();
         }
 
+        public IActionResult AllEquipment()
+        {
+            var equipment = Repository.GetAllEquipment();
+            return View(equipment);
+        }
+
+        public IActionResult AvailableEquipment()
+        {
+            var availableEquipment = Repository.GetAvailableEquipment();
+            return View(availableEquipment);
+        }
+
         [HttpPost]
         public ViewResult RequestForm(RequestForm requestForm)
         {
